@@ -1,7 +1,7 @@
-variable "domains" {
-  type    = list(string)
+variable "domain" {
+  type    = string
 }
 
 variable "s3bucket" {
-  type    = string
+  type    = map
 }
