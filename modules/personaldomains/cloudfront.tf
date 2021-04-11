@@ -63,6 +63,13 @@ resource "aws_cloudfront_distribution" "distribution" {
   tags = {
     "site" = var.domain
   }
+
+  logging_config {
+    bucket          = var.logging_bucket
+    include_cookies = var.log_cookies
+    prefix          = var.logging_prefix
+  }
+
   depends_on = [
     aws_acm_certificate.cert,
   ]
